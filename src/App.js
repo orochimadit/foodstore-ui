@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './styles/tailwind.css';
+import {HashRouter as Router , Route, Switch} from 'react-router-dom';
+import Home from './pages/Home';
+//import provider
+import {Provider} from 'react-redux';
+import 'upkit/dist/style.min.css';
+
+//import store 
+import store from './app/store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route path="/" component={Home} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 
