@@ -10,6 +10,7 @@ import store from './app/store';
 import { listen } from './app/listener';
 import Register from './pages/Register';
 import React from 'react';
+import Login from './pages/Login'
 function App() {
   React.useEffect(() =>{
     listen();
@@ -20,6 +21,7 @@ function App() {
         <Switch>
           <Route path="/register" component ={Register}/>
           <Route path="/" component={Home} />
+          <Route path="/login"><Login/></Route>        
         </Switch>
       </Router>
     </Provider>
