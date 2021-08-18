@@ -1,7 +1,7 @@
 // import module dari redux
 import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import authReducer from '../features/Auth/reducer';
-
+import productReducer from '../features/Products/reducer';
 // import redux-thunk middleware
 import thunk from 'redux-thunk';
 
@@ -10,7 +10,8 @@ const composerEnchancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 // gabung reducer , untuk sementara kosong, karena kita belum membuat reducer
 const rootReducers = combineReducers({
-    auth:authReducer
+    auth:authReducer,
+    products:productReducer
 });
 
 //buat store, dan gunakan composerEnchancer + middleware thunk 
