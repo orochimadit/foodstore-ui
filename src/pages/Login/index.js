@@ -2,11 +2,12 @@ import * as React from 'react';
 
 import { InputText,InputPassword, Button, FormControl, Card,LayoutOne } from 'upkit';
 import { useForm } from 'react-hook-form';
-import { useHistory, Redirect, Link } from 'react-router';
+import { useHistory, Redirect, Link } from 'react-router-dom';
 import StoreLogo from '../../components/StoreLogo';
 import { useDispatch, useSelector } from 'react-redux';
 import { rules } from './validation';
 import {login }from '../../api/auth';
+import { userLogin} from '../../features/Auth/actions';
 
 
 const statusList= {

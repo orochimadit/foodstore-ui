@@ -1,3 +1,4 @@
+import debounce from "debounce-promise";
 import { 
     ERROR_FETCHING_PRODUCT,
     NEXT_PAGE, 
@@ -50,7 +51,7 @@ export const fetchProducts = () =>{
             category
         }
         try{
-            let {data:{data, count} = await debouncedFetchProducts(params)};
+            let {data:{data, count}} = await debouncedFetchProducts(params);
             dispatch(successFetchingProducts({data, count}));
         }catch(err){
             dispatch(errorFetchingProducts());

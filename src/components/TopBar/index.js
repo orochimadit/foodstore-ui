@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux';
 import { Responsive, ButtonCircle } from 'upkit';
 import StoreLogo from '../StoreLogo';
 import FaUser from '@meronex/icons/fa/FaUser';
+import { Link } from 'react-router-dom';
 export default function TopBar(){
 
     let auth = useSelector(state =>state.auth);
-    return 
-    <Responsive desktop={2} justify="between" items="center">
+    return <Responsive desktop={2} justify="between" items="center">
         <div>
             <StoreLogo/>
         </div>
